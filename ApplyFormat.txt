@@ -1,0 +1,15 @@
+Sub ApplyFormat()
+    Dim sourceCell As Range
+    Dim targetRange As Range
+
+    ' Set the source cell whose format you want to copy
+    Set sourceCell = ThisWorkbook.Sheets("Sheet1").Range("A1")
+
+    ' Set the target range where you want to apply the format
+    Set targetRange = ThisWorkbook.Sheets("Sheet1").Range("B1:C5")
+
+    ' Copy the format of the source cell and apply it to the target range
+    sourceCell.Copy
+    targetRange.PasteSpecial Paste:=xlPasteFormats
+    Application.CutCopyMode = False
+End Sub
